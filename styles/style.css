@@ -876,3 +876,9 @@ footer a {
     }
 
 }
+
+@media only screen and (orientation: landscape) and (min-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+}
