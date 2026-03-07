@@ -743,6 +743,10 @@ footer a {
 }
 
 @media screen and (max-width: 821px) {
+    body {
+        overflow-x: hidden;
+    }
+
     .menuIco, label[for="menuIco"] {
         display: block;
     }
@@ -759,8 +763,13 @@ footer a {
         display: none;
     }
 
+    #visao {
+        flex-flow: column nowrap;
+    }
+
     .visaoImg img {
-        display: none;
+        display: block;
+        margin: 90px auto;
     }
 
     #valores-int {
@@ -875,10 +884,4 @@ footer a {
         margin: 20px 30px;
     }
 
-}
-
-@media only screen and (max-width: 900px) and (orientation: landscape) {
-    body {
-        overflow-x: hidden;
-    }
 }
