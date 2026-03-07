@@ -246,11 +246,25 @@ label span {
     margin: 10px;
     text-align: center;
     color: var(--color6);
-    background-color: var(--color2);
-    box-shadow: 0 0 20px var(--color2);
+    background-image: linear-gradient(270deg, var(--color2), var(--color2), var(--color1), var(--color1));
+    background-size: 200% 200%;
     padding: 17px 20px;
     width: 400px;
     border-radius: 100px;
+    box-shadow: 0 0 15px var(--color2);
+    animation: rotateGrad 4s ease infinite;
+    transition-duration: .2s;
+}
+
+.heroItens nav a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--color2);
+}
+
+@keyframes rotateGrad {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50% }
 }
 
 .block {
@@ -291,7 +305,7 @@ label span {
     left: 60%;
     border-radius: 40px;
     background-color: #fff;
-    height: 900px;
+    height: 400px;
     width: 500px;
 }
 
@@ -328,13 +342,28 @@ label span {
 }
 
 #valores-int {
-    margin: 0px 40px;
+    margin: 0px 80px;
     display: grid;
-    grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    'box1 box2 box3'
+    'box4 box5 box5'
+    ;
     grid-auto-rows: auto;
     place-items: center;
     color: #fff;
     gap: 20px;
+}
+
+.value1 { grid-area: box1; width: 85%; }
+.value2 { grid-area: box2; width: 85%; }
+.value3 { grid-area: box3; width: 85%; }
+.value4 { grid-area: box4; width: 85%; }
+
+.value5 {
+    grid-area: box5;
+    width: 93%;
 }
 
 #valores h2 {
@@ -350,7 +379,6 @@ label span {
 }
 
 .valoresCard {
-    width: 85%;
     border-radius: 15px;
     background-color: #1f0883;
     box-shadow: 5px 5px 10px #00000080;
@@ -479,10 +507,13 @@ label span {
     margin: 10px;
     width: 300px;
     color: var(--color6);
-    background-color: var(--color2);
+    background-image: linear-gradient(270deg, var(--color1), var(--color1), var(--color2), var(--color2));
+    background-size: 200% 200%;
     box-shadow: 0 0 20px var(--color2);
     padding: 17px 60px;
     border-radius: 100px;
+    animation: rotateGrad 2s linear infinite;
+    transition-duration: .2s;
 }
 
 footer {
@@ -737,6 +768,10 @@ footer a {
         flex-flow: column nowrap;
     }
 
+    .value5 {
+        width: 85%;
+    }
+
     .valoresCard {
         display: flex;
         justify-content: space-between;
@@ -761,7 +796,7 @@ footer a {
 
     .heroItens nav a {
         margin: -30px -30px -30px 30px;
-        width: 400px;
+        width: 60%;
     }
 
     #sobre h2 {
@@ -778,6 +813,10 @@ footer a {
 
     #valores-int {
         margin: 0px 10px;
+    }
+
+    .value5 {
+        width: 85%;
     }
 
     .whyText h2 {
