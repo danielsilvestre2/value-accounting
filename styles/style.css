@@ -877,7 +877,7 @@ footer a {
 
 }
 
-@media only screen and (orientation: landscape) and (min-width: 480px) {
+@media only screen and (max-width: 900px) and (orientation: landscape) {
     body {
         overflow-x: hidden;
     }
